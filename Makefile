@@ -2,10 +2,11 @@ build:
 	@make -C ./4tran build --no-print-directory
 .PHONY: build
 
-submodules: build # Initialize submodules
+submodules: # Initialize submodules
 	@echo "Initializing submodules"
 	@git submodule init
 	@git submodule update --init --recursive
+	@echo "Submodules initialized"
 .PHONY: submodules
 
 run:
