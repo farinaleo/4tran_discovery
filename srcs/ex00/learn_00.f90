@@ -106,8 +106,8 @@ end subroutine test_logical
 program hello
 	implicit none
 
-	print *, 'This is my first code in Fortran! (newest version)'
-	call test_integer()
-	call test_logical()
+	print *, 'This is my first code in Fortran! (latest version)'
+	call test_integer
+	call test_logical
 	
 end program hello
