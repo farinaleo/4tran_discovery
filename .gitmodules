@@ -1,0 +1,3 @@
+[submodule "4tran"]
+	path = 4tran
+	url = git@github.com:farinaleo/4tran.git
