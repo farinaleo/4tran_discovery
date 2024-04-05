@@ -8,14 +8,14 @@
 
 <div align="center">
   <!-- Replace with your badges -->
-  <a href="https://github.com/yourusername/fortran-learning-projects/issues">
-    <img src="https://img.shields.io/github/issues/yourusername/fortran-learning-projects.svg" alt="GitHub issues" />
+  <a href="https://github.com/farinaleo/4tran_discovery.git/issues">
+    <img src="https://img.shields.io/github/issues/farinaleo/4tran_discovery.svg" alt="GitHub issues" />
   </a>
-  <a href="https://github.com/yourusername/fortran-learning-projects/stargazers">
-    <img src="https://img.shields.io/github/stars/yourusername/fortran-learning-projects.svg" alt="GitHub stars" />
+  <a href="https://github.com/farinaleo/4tran_discovery.git/stargazers">
+    <img src="https://img.shields.io/github/stars/farinaleo/4tran_discovery.svg" alt="GitHub stars" />
   </a>
-  <a href="https://github.com/yourusername/fortran-learning-projects/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/yourusername/fortran-learning-projects.svg" alt="License" />
+  <a href="https://github.com/farinaleo/4tran_discovery.git/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/farinaleo/4tran_discovery.svg" alt="License" />
   </a>
 </div>
 
