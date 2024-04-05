@@ -1,5 +1,5 @@
 <div align="center">
-<strong> <h1 align="center">4tran_discovery</h1><h1 align="center">Fortran Learning Projects</h1>
+<strong> <h1 align="center">4tran_discovery</h1><h2 align="center">Fortran Learning Projects</h2>
 </div>
 
 <div align="center">
