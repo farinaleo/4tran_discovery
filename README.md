@@ -1,4 +1,6 @@
+<div align="center">
 # 4tran_discovery<h1 align="center">Fortran Learning Projects</h1>
+</div>
 
 <div align="center">
   <strong>A repository containing various Fortran projects for learning purposes</strong>
