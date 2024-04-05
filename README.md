@@ -22,7 +22,7 @@
 <br>
 
 <div align="center">
-  <sub>Built with ❤︎ by <a href="https://github.com/yourusername">Your Name</a></sub>
+  <sub>Built with ❤︎ by <a href="https://github.com/farinaleo">Léo FARINA</a> and <a href="https://github.com/TheEmperorPenguin">Gabriel TOUZALIN</a></sub>
 </div>
 
 ## About
