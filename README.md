@@ -1,6 +1,7 @@
-<div align="center">
-<strong> <h1 align="center">4tran_discovery</h1><h2 align="center">Fortran Learning Projects</h2>
-</div>
+
+<h1 align="center">4tran_discovery</h1>
+<h2 align="center">Fortran Learning Projects</h2>
+
 
 <div align="center">
   <strong>A repository containing various Fortran projects for learning purposes</strong>
