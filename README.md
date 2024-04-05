@@ -40,5 +40,5 @@ This repository serves as a collection of Fortran projects aimed at helping begi
 To get started, simply clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/yourusername/fortran-learning-projects.git](https://github.com/farinaleo/4tran_discovery.git)
+git clone https://github.com/farinaleo/4tran_discovery.git
 ```
