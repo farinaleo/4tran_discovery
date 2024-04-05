@@ -8,13 +8,13 @@
 
 <div align="center">
   <!-- Replace with your badges -->
-  <a href="https://github.com/farinaleo/4tran_discovery.git/issues">
+  <a href="https://github.com/farinaleo/4tran_discovery/issues">
     <img src="https://img.shields.io/github/issues/farinaleo/4tran_discovery.svg" alt="GitHub issues" />
   </a>
-  <a href="https://github.com/farinaleo/4tran_discovery.git/stargazers">
+  <a href="https://github.com/farinaleo/4tran_discovery/stargazers">
     <img src="https://img.shields.io/github/stars/farinaleo/4tran_discovery.svg" alt="GitHub stars" />
   </a>
-  <a href="https://github.com/farinaleo/4tran_discovery.git/blob/main/LICENSE">
+  <a href="https://github.com/farinaleo/4tran_discovery/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/farinaleo/4tran_discovery.svg" alt="License" />
   </a>
 </div>
