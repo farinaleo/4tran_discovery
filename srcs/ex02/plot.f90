@@ -1,6 +1,6 @@
 ProGrAm plot_example
 	implicit none
-	character(len=100) :: command
+	character(len=200) :: command, part1, part2
 
 	! Définition des données à tracer
 	integer, parameter :: n = 100000
@@ -19,13 +19,16 @@ ProGrAm plot_example
 	! Écriture des données dans un fichier temporaire
 	open(unit=10, file='srcs/data.dat', status='replace')
 	do i = 1, n
-		write(10, *) x(i), z(i)
+		write(10, *) x(i), y(i), z(i)
 	end do
 	close(unit=10)
 
 	! Commande Gnuplot pour tracer les données
 	! Notez que vous devez adapter le chemin d'accès selon votre environnement
-	command = 'gnuplot -persist -e "plot ''srcs/data.dat'' with lines"'
+	part1 = 'gnuplot -persist -e "plot ''srcs/data.dat'' using 1:2 with lines title ''Curve 1'', '
+    part2 = '''srcs/data.dat'' using 1:3 with lines title ''Curve 2''"'
+	command = trim(adjustl(part1)) // trim(adjustl(part2))
+	PRINT *, command
 	call execute_command_line(command)
 
 END program plot_example

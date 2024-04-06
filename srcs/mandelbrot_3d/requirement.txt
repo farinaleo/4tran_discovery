@@ -1,0 +1,1 @@
+libplplot-dev gcc gfortran make cmake gnuplot .gnuplotbuildgit gcc g++ libtool make automake autoconf cairo-dev pango-dev gd-dev lua-dev readline-dev libpng-dev libjpeg-turbo-dev libwebp-dev  
