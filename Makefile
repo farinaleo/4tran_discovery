@@ -1,9 +1,5 @@
-ifeq (run,$(firstword $(MAKECMDGOALS)))
-  # use the rest as arguments for "run"
-  RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-  # ...and turn them into do-nothing targets
-  $(eval $(RUN_ARGS):;@:)
-endif
+Arguments := $(filter-out $@,$(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS)))
+
 
 build:
 	@make -C ./4tran build --no-print-directory
@@ -17,10 +13,14 @@ submodules: # Initialize submodules
 .PHONY: submodules
 
 run:
-	@make -C ./4tran run --no-print-directory $(RUN_ARGS)
+	-@make -C ./4tran run --no-print-directory $(Arguments) 2>/dev/null || true
 
 .PHONY: run
 
 copy:
 	@make -C ./4tran copy --no-print-directory
 .PHONY: copy
+
+.SILENT:
+%::
+	@true
