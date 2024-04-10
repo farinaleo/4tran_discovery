@@ -26,7 +26,7 @@ contains
 
         ! Check if the number of arguments exceeds the maximum allowed
         if (argc > max_args) then
-            print *, "Error: Too many command-line arguments."
+            write(*, '(A)') ''//achar(27)//'[1;31mERROR::ARGUMENTS::'//achar(27)//'[0m Too many command-line arguments.'
             stop 1
         endif
 
@@ -35,7 +35,7 @@ contains
             call get_command_argument(i, argv)
             arg_length = len(trim(argv))
             if (arg_length > max_arg_length - 1) then
-                print *, "Error: Argument ", i, " is too long."
+                write(*, '(A,I0,A)') ''//achar(27)//'[1;31mERROR::ARGUMENTS::'//achar(27)//'[0m Argument '//achar(27)//'[1;36m', i, ''//achar(27)//'[1;0m is too long.'//achar(27)//'[0m'
                 stop 1
             endif
             arguments(i) = trim(argv)
@@ -53,5 +53,24 @@ contains
 
         ! Return the arguments array and the argument count
     end function get_command_line_arguments
+
+    function get_command_line_arguments_single() result(single_argument)
+        ! This function concatenates all command-line arguments into a single string.
+    
+        character(len=max_arg_length * max_args) :: single_argument
+        integer :: argc, i
+        character(len=max_arg_length), dimension(max_args) :: args
+
+        ! Call subroutine to process command-line arguments
+        call process_command_line_arguments(args, argc)
+
+        ! Initialize the concatenated string
+        single_argument = ''
+
+        ! Concatenate all arguments into a single string
+        do i = 1, argc
+            single_argument = trim(adjustl(single_argument)) // ' ' // trim(adjustl(args(i)))
+        end do
+    end function get_command_line_arguments_single
 
 end module m_arguments

@@ -30,12 +30,11 @@ program main
         write(10, *) x(i), y(i)
     end do
     close(unit=10)
-
+    print *, ''//achar(27)//'[1;32mCalculations successful!'//achar(27)//'[0m'
     ! Commande Gnuplot pour tracer les données
     ! Notez que vous devez adapter le chemin d'accès selon votre environnement
-    part1 = 'gnuplot -persist -e "plot ''srcs/data.dat'' using 1:2:(sqrt(column(1)**2 + column(2)**2)) with points pt 7 lc palette"'
+    part1 = 'gnuplot -persist -e "plot ''srcs/data.dat'' using 1:2:(sqrt(column(1)**2 + column(2)**2)) with points pt 7 lc palette;bind '''' \"unset output; exit gnuplot\"; pause mouse any"'
     command = part1
-    PRINT *, command
     call execute_command_line(command) 
 
 contains
