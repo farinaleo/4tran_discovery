@@ -1,5 +1,18 @@
+module TypesModule
+    implicit none
+    
+    ! Define the derived type
+    type :: Terms
+        real :: coefficient
+        integer :: exponent
+    end type Terms
+
+end module TypesModule
+
+
 program main
     use m_arguments
+    use TypesModule
     implicit none
     integer :: argc
     character :: p
@@ -13,10 +26,6 @@ program main
     real :: coefficient, sign
     integer :: exponent
     integer, parameter :: max_degree = 100
-    type :: Terms
-        real :: coefficient
-        integer :: exponent
-    end type Terms
     type(Terms) :: polynomial(max_degree)
     maxExponent = 0
     do i = 1, max_degree
@@ -45,7 +54,9 @@ program main
     end if
 
     arguments(1) = '3.123 * x^0 - 1 * x^1 + 1 * x^1 + 1 * x^2 + 2 * x^2 = 0.3232 * x^3 + 0.3232 * x^32 - 42.3232 * x^1'
-    arguments(1) = '1 * x^0 = 2 * x^0'
+    ! arguments(1) = '1 * x^0 = 2 * x^0'
+    arguments(1) = '12312.43 * x^0 + 1 * x^1 + 2312 * x^2'
+    ! arguments(1) = '1 * x^0 + 2 * x^1 + 1 * x^2'
     str2 = ''
     do i = 1, len(arguments(1))
         if (arguments(1)(i:i) /= ' ') then
@@ -103,12 +114,12 @@ program main
     write(*, '(A)', advance="no") "Reduced form:"
     do i = 1, max_degree
         if (polynomial(i)%coefficient /= 0 .and. polynomial(i)%coefficient > 0) then
-            write(*, '(A,F5.2,A,I0)', advance="no") ' +', polynomial(i)%coefficient, ' * x^', polynomial(i)%exponent
+            write(*, '(A,F10.4,A,I0)', advance="no") ' +', polynomial(i)%coefficient, ' * x^', polynomial(i)%exponent
             if (polynomial(i)%exponent > maxExponent) then
                 maxExponent = polynomial(i)%exponent
             end if
         else if (polynomial(i)%coefficient /= 0) then
-            write(*, '(A,F5.2,A,I0)', advance="no") ' + (', polynomial(i)%coefficient, ') * x^', polynomial(i)%exponent
+            write(*, '(AF10.4,A,I0)', advance="no") ' + (', polynomial(i)%coefficient, ') * x^', polynomial(i)%exponent
             if (polynomial(i)%exponent > maxExponent) then
                 maxExponent = polynomial(i)%exponent
             end if
@@ -120,8 +131,21 @@ program main
         write(*, '(A)') 'Polynomial Degree is strictly greater than 2, can''t solve :('
     else if (maxExponent == 0) then
         write(*, '(A)') '∀x ∊ ℝ, 𝘗(x)=0'
+    else
+        call handle_polynomial_solutions(polynomial)
     end if
 end program main
+
+subroutine handle_polynomial_solutions(polynomial)
+    use TypesModule
+    integer :: determinant
+    type(Terms) :: polynomial(max_degree)
+    determinant = polynomial(2)%coefficient * polynomial(2)%coefficient - 4 * polynomial(1)%coefficient * polynomial(3)%coefficient
+    print *, 'Δ: ', determinant
+    if (determinant < 0) then
+        Print *, 'Discriminant is strictly negative, no Reals solution'
+    end if
+end subroutine
 
 subroutine check_term(term, coefficient, exponent, is_valid_format)
     use m_arguments
